@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basic calculation</title>
+</head>
+<body>
+    <script>
+        //basic salary
+        let basicSalary = 30000;  
+let hra = basicSalary * 0.2;   
+let da = basicSalary * 0.1;   
+let grossSalary = basicSalary + hra + da;
+
+console.log("Basic Salary:", basicSalary);
+console.log("HRA (20%):", hra);
+console.log("DA (10%):", da);
+console.log("Gross Salary:", grossSalary);
+
+
+        //celcius to ferenhite
+        let celsius = 25;
+let fahrenheit = (celsius * 9/5) + 32;
+
+console.log(`${celsius}°C is equal to ${fahrenheit}°F`);
+
+        //ferenhite to celcius
+        let fahrenheits = 98.6;  
+let celsiuss = (fahrenheits - 32) * 5/9;
+
+console.log(`${fahrenheits}°F is equal to ${celsiuss.toFixed(2)}°C`);
+
+        //meter to foot
+        let meters = 5;
+let feet = meters * 3.28084;
+
+console.log(`${meters} meter(s) is equal to ${feet.toFixed(2)} feet`);
+
+        //mm to meter
+        
+let mm = 1500; 
+let meterss = mm / 1000;
+
+console.log(`${mm} mm is equal to ${meterss} meters`);
+
+        //mile to km
+        
+let miles = 10; 
+let kilometers = miles * 1.60934;
+
+console.log(`${miles} mile(s) is equal to ${kilometers.toFixed(2)} km`);
+
+  //km to mile
+  let km = 10; 
+let milesss = km * 0.621371;
+
+console.log(`${km} kilometer(s) is equal to ${milesss.toFixed(2)} mile(s)`);
+        //mile to meter
+
+        let milessss = 2; 
+let metersss = miles * 1609.34;
+
+console.log(`${miles} mile(s) is equal to ${metersss.toFixed(2)} meter(s)`);
+
+//second to hours
+
+let seconds = 7200;  
+let hours = seconds / 3600;
+
+console.log(`${seconds} second(s) is equal to ${hours.toFixed(2)} hour(s)`);
+
+//hours to minutes
+let hourss = 2.5;  // You can change this value
+let minutes = hours * 60;
+
+console.log(`${hours} hour(s) is equal to ${minutes} minute(s)`);
+    </script>
+</body>
+</html>
