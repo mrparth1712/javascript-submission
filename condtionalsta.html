@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conditional statements</title>
+</head>
+<body>
+    <script>
+        //negative positive 
+        let num = 10;
+
+if (num > 0) {
+  console.log("Positive number");
+} else if (num < 0) {
+  console.log("Negative number");
+} else {
+  console.log("Zero");
+}
+
+//even odd
+let number = 7;
+
+if (number % 2 === 0) {
+  console.log("Even number");
+} else {
+  console.log("Odd number");
+}
+
+//grade checker
+let marks = 85;
+
+if (marks >= 90) {
+  console.log("Grade A");
+} else if (marks >= 75) {
+  console.log("Grade B");
+} else if (marks >= 60) {
+  console.log("Grade C");
+} else {
+  console.log("Fail");
+}
+//vote eligibilty
+
+
+let age = 17;
+
+if (age >= 18) {
+  console.log("Eligible to vote");
+} else {
+  console.log("Not eligible to vote");
+}
+
+//leapyear or not
+let year = 2024;
+
+if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+  console.log(`${year} is a Leap Year`);
+} else {
+  console.log(`${year} is not a Leap Year`);
+}
+    </script>
+</body>
+</html>
