@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stopwatch using  set interval</title>
+    <style>
+        * {
+          box-sizing: border-box;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    
+        body {
+          background: linear-gradient(to right, #667eea, #764ba2);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+        }
+    
+        .stopwatch-container {
+          background: white;
+          padding: 2rem;
+          border-radius: 20px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+          text-align: center;
+          max-width: 300px;
+          width: 100%;
+        }
+    
+        .time-display {
+          font-size: 3rem;
+          font-weight: bold;
+          margin-bottom: 1.5rem;
+          color: #333;
+        }
+    
+        .buttons {
+          display: flex;
+          justify-content: space-between;
+          gap: 10px;
+        }
+    
+        .buttons button {
+          flex: 1;
+          padding: 0.75rem;
+          border: none;
+          border-radius: 10px;
+          font-size: 1rem;
+          font-weight: 600;
+          color: white;
+          cursor: pointer;
+          transition: background 0.3s;
+        }
+    
+        .start { background: #28a745; }
+        .pause { background: #ffc107; }
+        .reset { background: #dc3545; }
+    
+        .start:hover { background: #218838; }
+        .pause:hover { background: #e0a800; }
+        .reset:hover { background: #c82333; }
+      </style>
+    </head>
+    <body>
+    
+      <div class="stopwatch-container">
+        <div class="time-display" id="display">00:00:00</div>
+        <div class="buttons">
+          <button class="start" onclick="startStopwatch()">Start</button>
+          <button class="pause" onclick="pauseStopwatch()">Pause</button>
+          <button class="reset" onclick="resetStopwatch()">Reset</button>
+        </div>
+      </div>
+</head>
+
+        <script>
+                let seconds = 0;
+    let interval = null;
+
+    function formatTime(s) {
+      const hrs = String(Math.floor(s / 3600)).padStart(2, '0');
+      const mins = String(Math.floor((s % 3600) / 60)).padStart(2, '0');
+      const secs = String(s % 60).padStart(2, '0');
+      return `${hrs}:${mins}:${secs}`;
+    }
+
+    function updateDisplay() {
+      document.getElementById('display').textContent = formatTime(seconds);
+    }
+
+    function startStopwatch() {
+      if (interval) return; // Prevent multiple intervals
+      interval = setInterval(() => {
+        seconds++;
+        updateDisplay();
+      }, 1000);
+    }
+
+    function pauseStopwatch() {
+      clearInterval(interval);
+      interval = null;
+    }
+
+    function resetStopwatch() {
+      pauseStopwatch();
+      seconds = 0;
+      updateDisplay();
+    }
+
+    // Initialize display
+    updateDisplay();
+        </script>
+</body>
+</html>
+
+
